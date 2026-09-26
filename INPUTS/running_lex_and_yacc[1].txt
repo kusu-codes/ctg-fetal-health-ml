@@ -1,0 +1,162 @@
+Great question!
+
+### ❓ Is a YACC file **always** used with a LEX file?
+
+### ✅ **Short Answer:**
+
+**No, not always.**
+But **usually yes** — especially in compiler design or parsing tasks.
+
+---
+
+### 🔍 **Explanation:**
+
+| Component        | Purpose                                                                                                                             |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **LEX / Flex**   | Used to **tokenize** input (e.g., extract numbers, symbols, etc.). It breaks input into **tokens** like `NUMBER`, `PLUS`, `LPAREN`. |
+| **YACC / Bison** | Used to **parse** the token stream and **build logic** (e.g., compute expressions, build trees, validate syntax).                   |
+
+---
+
+### 🔗 Why LEX is usually paired with YACC:
+
+* YACC expects a function called `yylex()` to supply tokens.
+* A LEX file **automatically generates** `yylex()`, so it works seamlessly with YACC.
+
+---
+
+### 🔁 But you **can** write a YACC-only program:
+
+You can manually write your own `int yylex()` function in C/C++ like this:
+
+```c
+int yylex() {
+    int c = getchar();
+    if (isdigit(c)) {
+        yylval = c - '0';
+        return NUMBER;
+    }
+    return c;
+}
+```
+
+This skips LEX completely — **but only works for simple inputs**.
+
+---
+
+### ✅ When to use both:
+
+| Use Case                       | Lex Needed?  |
+| ------------------------------ | ------------ |
+| Calculator / Expression Parser | ✅ Yes        |
+| Simple hardcoded tokens        | ❌ No         |
+| Compiler or language design    | ✅ Definitely |
+
+---
+
+### ✅ Summary:
+
+| Question                                        | Answer                                  |
+| ----------------------------------------------- | --------------------------------------- |
+| Is a YACC file **always** used with a LEX file? | ❌ No                                    |
+| Is it **common** to use them together?          | ✅ Yes                                   |
+| Can YACC work without LEX?                      | ✅ Yes, if you define `yylex()` manually |
+
+Let me know if you'd like an example of a **YACC-only program without LEX**!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Absolutely! Here are the commands for both cases:
+
+---
+
+## ✅ **A. YACC Only (Without Lex)**
+
+This method works if you **write your own `yylex()`** in the `.y` file.
+
+### 🧾 Example Files:
+
+* `simple.y` → your YACC file **with a custom `yylex()`**
+
+### ✅ Commands:
+
+```bash
+bison -d simple.y          # Generates simple.tab.c and simple.tab.h
+gcc simple.tab.c -o parser # Compiles the parser
+parser                     # Runs the parser
+```
+
+> Make sure your `simple.y` file includes:
+
+```c
+int yylex();   // Defined manually inside the same file
+```
+
+---
+
+## ✅ **B. YACC + LEX (Typical Case)**
+
+### 🧾 Files:
+
+* `expr.l` → Lex file (lexer)
+* `expr.y` → Yacc file (parser)
+
+### ✅ Commands:
+
+```bash
+bison -d expr.y            # Generates expr.tab.c and expr.tab.h
+flex expr.l                # Generates lex.yy.c
+gcc lex.yy.c expr.tab.c -o parser  # Compiles both together
+parser                     # Runs the final program
+```
+
+---
+
+## 🔍 Optional Tips
+
+| Step       | What it does                                           |
+| ---------- | ------------------------------------------------------ |
+| `bison -d` | Generates parser (`.tab.c`) and header file (`.tab.h`) |
+| `flex`     | Generates lexer (`lex.yy.c`)                           |
+| `gcc ...`  | Compiles all into one executable                       |
+| `parser`   | Starts your program                                    |
+
+---
+
+If you'd like, I can give you **ready `.l` and `.y` files** to test both cases side by side.
+
+
+
+
+
+
+
+
+
+
+To run a Lex (.l) file, follow these steps:
+
+flex demo.l
+gcc lex.yy.c -o lexer
+lexer
+
+
+win_flex simple.l
+gcc lex.yy.c -o simple.exe
+simple
+
+flex demo.l
+gcc lex.yy.c -o lexer.exe
+lexer.exe
+

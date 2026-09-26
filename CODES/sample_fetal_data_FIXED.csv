@@ -1,0 +1,4 @@
+baseline value,accelerations,fetal_movement,uterine_contractions,light_decelerations,prolongued_decelerations,severe_decelerations,abnormal_short_term_variability,mean_value_of_short_term_variability,percentage_of_time_with_abnormal_long_term_variability,mean_value_of_long_term_variability,histogram_width,histogram_min,histogram_max,histogram_number_of_peaks,histogram_number_of_zeroes,histogram_mode,histogram_mean,histogram_median,histogram_variance,histogram_tendency
+120,0.003,0.005,0.004,0.003,0.0,0.0,0.8,0.5,20,2.0,50,90,170,3,0,140,135,136,15,1
+132,0.004,0.006,0.005,0.001,0.001,0.0,0.6,0.6,15,2.3,60,85,180,4,0,150,148,149,20,-1
+140,0.002,0.004,0.003,0.002,0.002,0.0,0.7,0.4,30,1.9,55,88,160,2,1,145,142,143,18,0

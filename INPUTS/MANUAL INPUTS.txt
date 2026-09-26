@@ -1,0 +1,73 @@
+SUSPECT CASE
+baseline_value = 150
+accelerations = 0.0005
+fetal_movement = 0.005
+uterine_contractions = 0.005
+light_decelerations = 0.005
+severe_decelerations = 0.000
+prolongued_decelerations = 0.002
+abnormal_short_term_variability = 35
+mean_value_of_short_term_variability = 0.3
+percentage_of_time_with_abnormal_long_term_variability = 70
+mean_value_of_long_term_variability = 12
+histogram_width = 65
+histogram_min = 40
+histogram_max = 180
+histogram_number_of_peaks = 3
+histogram_number_of_zeroes = 1
+histogram_mode = 145
+histogram_mean = 155
+histogram_median = 150
+histogram_variance = 100
+histogram_tendency = 1
+
+
+
+PATHOLOGY CASE
+baseline_value = 120
+accelerations = 0.0001
+fetal_movement = 0.001
+uterine_contractions = 0.005
+light_decelerations = 0.1
+prolongued_decelerations = 0.05
+abnormal_short_term_variability = 100
+mean_value_of_short_term_variability = 0.5
+percentage_of_time_with_abnormal_long_term_variability = 80
+mean_value_of_long_term_variability = 1
+histogram_width = 100
+histogram_min = 50
+histogram_max = 200
+histogram_number_of_peaks = 20
+histogram_number_of_zeroes = 20
+histogram_mode = 50
+histogram_mean = 140
+histogram_median = 130
+histogram_variance = 200
+histogram_tendency = 2
+severe_decelerations = 1
+  
+
+NORMAL CASE
+baseline_value = 120
+accelerations = 0.005
+fetal_movement = 0.000
+uterine_contractions = 0.000
+light_decelerations = 0.000
+severe_decelerations = 0.000
+prolongued_decelerations = 0.000
+abnormal_short_term_variability = 12
+mean_value_of_short_term_variability = 0.8
+percentage_of_time_with_abnormal_long_term_variability = 0
+mean_value_of_long_term_variability = 25
+histogram_width = 50
+histogram_min = 60
+histogram_max = 160
+histogram_number_of_peaks = 2
+histogram_number_of_zeroes = 0
+histogram_mode = 120
+histogram_mean = 130
+histogram_median = 125
+histogram_variance = 30
+histogram_tendency = 0
+
+
